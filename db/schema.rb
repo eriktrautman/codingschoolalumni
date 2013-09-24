@@ -11,7 +11,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130924230504) do
+ActiveRecord::Schema.define(version: 20130924231351) do
+
+  create_table "cities", force: true do |t|
+    t.string   "name"
+    t.string   "abbrev"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "cities", ["abbrev"], name: "index_cities_on_abbrev", unique: true
+  add_index "cities", ["name"], name: "index_cities_on_name", unique: true
+
+  create_table "cohorts", force: true do |t|
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.integer  "school_id"
+    t.integer  "city_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "cohorts", ["end_date"], name: "index_cohorts_on_end_date"
+  add_index "cohorts", ["start_date", "end_date"], name: "index_cohorts_on_start_date_and_end_date", unique: true
+  add_index "cohorts", ["start_date"], name: "index_cohorts_on_start_date"
+
+  create_table "schools", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "schools", ["name"], name: "index_schools_on_name", unique: true
 
   create_table "users", force: true do |t|
     t.string   "email"
