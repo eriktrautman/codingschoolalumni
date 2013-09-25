@@ -35,9 +35,15 @@
 
   <div class="signup-form">
     <%= form_for @user do |f| %>
-      <%= f.collection_select :school_id, @schools_list, :id, :name, :prompt => true %>
-      <select name="cohort" id="cohort-combobox"></select>
-      <%= f.submit :text => "Sign up with LinkedIn" %>
+      <label>School:</label>
+      <%= collection_select :school, :school_id, @schools_list, :id, :name, :prompt => true %>
+      <label for="cohort">
+        Cohort:
+      </label>
+      <select name="cohort" id="cohort-combobox">
+        <option value>Select School First</option>
+      </select>
+      <%= f.submit :value => "Sign up with LinkedIn" %>
     <% end %>
   </div>
 
