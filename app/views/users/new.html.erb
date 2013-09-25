@@ -1,0 +1,44 @@
+
+<div id="splash-content-container">
+  
+  <h1>Coding School Alumni Association</h1>
+  
+  <div class="top-explanation">
+    <h3>
+      The CSAA is a private network of alumni from select full-time vocationally-focused coding schools designed to help graduates connect with their future friends, coworkers and cofounders.
+    </h3>
+  </div>
+
+  <div class="activities">
+    <ul>
+      <li>Jobs</li>
+      <li>Networking</li>
+      <li>Happy Hours</li>
+      <li>Special Events</li>
+      <li>Career Advice</li>
+      <li>Mentorship</li>
+      <li>Community</li>
+      <li>Education</li>
+      <li>Hacking</li>
+      <li>Co-Founding</li>
+      <li>Nerd Humor</li>
+      <li>Jobs</li>
+      <li>Hackathons</li>
+    </ul>
+  </div>
+
+  <div class="cta">
+    <h2>
+      Sign up for access to our alumni events and newsletter
+    </h2>
+  </div>
+
+  <div class="signup-form">
+    <%= form_for @user do |f| %>
+      <%= f.collection_select :school_id, @schools_list, :id, :name, :prompt => true %>
+      <select name="cohort" id="cohort-combobox"></select>
+      <%= f.submit :text => "Sign up with LinkedIn" %>
+    <% end %>
+  </div>
+
+</div>
