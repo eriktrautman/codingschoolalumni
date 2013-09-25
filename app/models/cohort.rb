@@ -4,6 +4,6 @@ class Cohort < ActiveRecord::Base
 
   belongs_to :school
   has_many :alumni, :class_name => "User"
-  has_many :cities
+  belongs_to :city
 
 end
