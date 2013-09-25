@@ -4,7 +4,7 @@ class School < ActiveRecord::Base
 
   has_many :cohorts
   has_many :alumni, :foreign_key => :user_id
-  has_many :campuses # rails can't pluralize this
-  has_many :cities, :through => :campuses # rails can't pluralize this
+  has_many :campuses 
+  has_many :cities, :through => :campuses
 
 end

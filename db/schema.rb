@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130925003414) do
+ActiveRecord::Schema.define(version: 20130925005141) do
 
   create_table "campuses", force: true do |t|
     t.integer  "school_id"
@@ -55,7 +55,6 @@ ActiveRecord::Schema.define(version: 20130925003414) do
 
   create_table "users", force: true do |t|
     t.string   "email"
-    t.integer  "school_id"
     t.integer  "cohort_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -63,6 +62,5 @@ ActiveRecord::Schema.define(version: 20130925003414) do
 
   add_index "users", ["cohort_id"], name: "index_users_on_cohort_id"
   add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["school_id"], name: "index_users_on_school_id"
 
 end
