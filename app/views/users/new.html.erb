@@ -38,16 +38,28 @@
           :html => { :onsubmit => "return(validateForm())"} do |f| %>
       <label>School:</label>
       <%= collection_select :school, :school_id, @schools_list, :id, :name, :prompt => true %>
-      <label for="cohort">
+      <label for="cohort_id">
         Cohort:
       </label>
-      <select name="cohort" id="cohort-combobox">
+      <select name="cohort_id" id="cohort-combobox">
         <option value>Select School First</option>
       </select>
       <%= f.submit :value => "Sign up with LinkedIn" %>
     <% end %>
   </div>
 
+<!--   I am before the linkedin stuff.
+
+  <script src="//platform.linkedin.com/in.js" type="text/javascript">
+        api_key: 3cnmfu8ljo81
+        authorize: false
+  </script>
+  <script type="in/Login">
+    Hello, <?js= firstName ?> <?js= lastName ?>.
+  </script>
+
+  I am after the linkedin stuff.
+ -->
   <%= content_tag :div, :class => "cohort_list", :data => {cohort_list: @cohorts_list } do end%>
 
 </div>
