@@ -47,6 +47,42 @@
     <% end %>
   </div>
 
-  <%= content_tag :div, :class => "cohort_list", :data => @cohort_list do end%>
+  <%= content_tag :div, :class => "cohort_list", :data => {cohort_list: @cohorts_list } do end%>
 
 </div>
+
+<script>
+  $(function(){
+
+    // on selection made or change made to the school box
+    // grab the cohort data and display it for that cohort only
+    $("#school_school_id").change(function(){
+
+      $("#cohort-combobox").html("<option value>Please Select</option>");
+      var selectedSchoolId = $(this).val();
+      var cohortList = $(".cohort_list").data("cohort-list")
+
+      if(cohortList != null){
+        cohortList.forEach(function(data){
+          if(data.id == selectedSchoolId){
+            var start = new Date(data.start_date);
+            var finish = new Date(data.end_date);
+            var innerText =   (start.getMonth() + 1) + "/" + 
+                              start.getDate() + "/" +
+                              (start.getFullYear() - 2000) + " to " +
+                              (finish.getMonth() + 1) + "/" + 
+                              finish.getDate() + "/" +
+                              (finish.getFullYear() - 2000);
+            $("#cohort-combobox").append("<option value='" + data.id + "'>" + innerText + "</option>");
+          }
+        })
+      }
+    })
+    // create a new select box in the right place for each item
+  });
+</script>
+
+
+
+
+
