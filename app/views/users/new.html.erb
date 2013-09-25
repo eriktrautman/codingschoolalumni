@@ -64,10 +64,12 @@
 
       if(cohortList != null){
         cohortList.forEach(function(data){
+          console.log(data);
           if(data.id == selectedSchoolId){
             var start = new Date(data.start_date);
             var finish = new Date(data.end_date);
-            var innerText =   (start.getMonth() + 1) + "/" + 
+            var innerText =   data.city + ": " +
+                              (start.getMonth() + 1) + "/" + 
                               start.getDate() + "/" +
                               (start.getFullYear() - 2000) + " to " +
                               (finish.getMonth() + 1) + "/" + 
