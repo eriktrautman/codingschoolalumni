@@ -14,4 +14,9 @@ class UsersController < ApplicationController
     end
   end
 
+  def create
+
+    render :signup_thank_you
+  end
+
 end
