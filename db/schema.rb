@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130924231944) do
+ActiveRecord::Schema.define(version: 20130925003414) do
+
+  create_table "campuses", force: true do |t|
+    t.integer  "school_id"
+    t.integer  "city_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "campuses", ["school_id", "city_id"], name: "index_campuses_on_school_id_and_city_id", unique: true
 
   create_table "cities", force: true do |t|
     t.string   "name"
