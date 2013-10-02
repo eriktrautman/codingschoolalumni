@@ -16,6 +16,15 @@ class UsersController < ApplicationController
     end
   end
 
+  # This is called when the user submits the splash page form
+  # it needs to persist the already-entered information and 
+  # redirect the user to the LinkedIn signup flow
+  def validate
+
+    puts "\n\n\n\n\n I neeed to be validated!! \n\n\n\n\n\n"
+
+  end
+
   def create
     # cohort = Cohort.find_by_id(params[:cohort_id])
     # hold off on creating the user for now... let's see if I can
@@ -32,6 +41,11 @@ puts "\n\n\nREDIRECT URI IS #{redirect_uri}! \n\n\n"
     linkedin_url = "https://www.linkedin.com/uas/oauth2/authorization?response_type=code&client_id=3cnmfu8ljo81&scope=r_fullprofile%20r_emailaddress%20r_contactinfo&state=#{state}&redirect_uri=#{redirect_uri}"
 
     redirect_to linkedin_url
+  end
+
+  # This is called when the user successfully signs in to LinkedIn
+  def validated_signup
+    puts "\n\n\n\n\n I AM VALIDATED BABY WOOOO!!! \n\n\n\n\n\n"
   end
 
   def linkedin_signup

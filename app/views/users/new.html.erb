@@ -34,7 +34,7 @@
   </div>
 
   <div class="signup-form">
-    <%= form_for @user, 
+    <%= form_for @user, :url => "validate_user",
           :html => { :onsubmit => "return(validateForm())"} do |f| %>
       <label>School:</label>
       <%= collection_select :school, :school_id, @schools_list, :id, :name, :prompt => true %>
