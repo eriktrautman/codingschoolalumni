@@ -42,9 +42,10 @@ puts "\n\n\nREDIRECT URI IS #{redirect_uri}! \n\n\n"
       puts "\n\n\n\n ERRORRRRRR at params #{params.inspect}! \n\n\n\n"
       redirect_to root_path
     else
+      cohort_id = params[:cohort_id]
       authorization_code = params[:code]
       outgoing_params = {:cohort_id => cohort_id }
-      redirect_uri = linkedin_signup_url(:cohort_id=>params[:cohort_id])
+      redirect_uri = linkedin_signup_url(:cohort_id => cohort_id)
 
       linkedin_url = "https://www.linkedin.com/uas/oauth2/accessToken?grant_type=authorization_code&code=#{authorization_code}&redirect_uri=#{redirect_uri}&client_id=3cnmfu8ljo81&client_secret=ujXnuQv6SSc0oPSB"
 
