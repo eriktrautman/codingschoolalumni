@@ -31,18 +31,22 @@ class UsersController < ApplicationController
     if session[:cohort_id]
       cohort = Cohort.find_by_id(session[:cohort_id])
       if cohort
-        @user = User.new(:email => auth_hash[:info][:email], :cohort_id => cohort.id)
+        @user = User.new( 
+            :email => auth_hash[:info][:email], 
+            :fname => auth_hash[:info][:first_name],
+            :lname => auth_hash[:info][:last_name],
+            :cohort_id => cohort.id)
         if @user.save
           flash[:success] = "Success! You're all signed up... Now spread the word!"
           redirect_to root_path
         else
-          flash.now[:error] = "We couldn't create your account due to the following errors: #{@user.errors.full_messages }!"
-          render :new
+          flash[:error] = "We couldn't create your account due to the following errors: #{@user.errors.full_messages }!"
+          redirect_to root_path
         end
       end
     else
-      flash.now[:error] = "Error! We got your LinkedIn credentials but couldn't find the cohort_id you selected originally.  Probably our fault."
-      render :new
+      flash[:error] = "Error! We got your LinkedIn credentials but couldn't find the cohort_id you selected originally.  Probably our fault."
+      redirect_to root_path
     end
 
   end
