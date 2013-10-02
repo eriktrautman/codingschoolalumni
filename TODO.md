@@ -10,10 +10,9 @@ XXX build users controller, view basics (coming soon)
 XXX build users controller
 XXX build users#new view basics
 XXX set up javascript to autopopulate the cohorts
-** make the form users#create action build the new shell user
-* build linked-in signin functionality [oauth, add key to user model]
-** build the link to the database with the emails and user info
-** Refactor the crap out of the linkedin code!!! >> Model
+XXX build linked-in signin functionality [oauth, add key to user model]
+XXX build the link to the database with the emails and user info
+XXX Refactor the crap out of the linkedin code!!! >> Model
 * build the mailchimp list integration
 * build thank-you page basics
 * add social buttons to thank-you page
