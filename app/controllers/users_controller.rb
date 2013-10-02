@@ -19,33 +19,39 @@ class UsersController < ApplicationController
   # This is called when the user submits the splash page form
   # it needs to persist the already-entered information and 
   # redirect the user to the LinkedIn signup flow
-  def validate
+  def validate_signup
 
     puts "\n\n\n\n\n I neeed to be validated!! \n\n\n\n\n\n"
+    session[:cohort_id] = params[:cohort_id]
+    redirect_to "/auth/linkedin"
 
   end
 
   def create
-    # cohort = Cohort.find_by_id(params[:cohort_id])
-    # hold off on creating the user for now... let's see if I can
-    # track the cohort value through the linkedin signup process
-      # render :signup_thank_you
+    if session[:cohort_id]
+      cohort = Cohort.find_by_id(session[:cohort_id])
+      if cohort
+        @user = User.new(:email => auth_hash[:info][:email], :cohort_id => cohort.id)
+        if @user.save
+          flash[:success] = "Success! You're all signed up... Now spread the word!"
+          redirect_to root_path
+        else
+          flash.now[:error] = "We couldn't create your account due to the following errors: #{@user.errors.full_messages }!"
+          render :new
+        end
+      end
+    else
+      flash.now[:error] = "Error! We got your LinkedIn credentials but couldn't find the cohort_id you selected originally.  Probably our fault."
+      render :new
+    end
 
-    # to protect against CSRF.. right now I'm not saving it so it
-    # is totally irrelevant
-    state = "#{SecureRandom.urlsafe_base64(nil, false)}"
-
-    redirect_uri = linkedin_signup_url(:cohort_id=>params[:cohort_id])
-    # puts "\n\n\n\n #{redirect_uri} \n\n\n "
-puts "\n\n\nREDIRECT URI IS #{redirect_uri}! \n\n\n"
-    linkedin_url = "https://www.linkedin.com/uas/oauth2/authorization?response_type=code&client_id=3cnmfu8ljo81&scope=r_fullprofile%20r_emailaddress%20r_contactinfo&state=#{state}&redirect_uri=#{redirect_uri}"
-
-    redirect_to linkedin_url
   end
 
   # This is called when the user successfully signs in to LinkedIn
   def validated_signup
     puts "\n\n\n\n\n I AM VALIDATED BABY WOOOO!!! \n\n\n\n\n\n"
+    puts "Auth hash is : #{auth_hash}!!!\n\n\n\n\n\n\n"
+
   end
 
   def linkedin_signup
@@ -93,4 +99,9 @@ puts "\n\n\nREDIRECT URI IS #{redirect_uri}! \n\n\n"
   def signup_params
     params.require(:cohort).permit(:cohort, :id)
   end
+
+  def auth_hash
+    request.env["omniauth.auth"]
+  end
+
 end
