@@ -19,6 +19,9 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'omniauth', '~> 1.1.4'
 gem 'omniauth-linkedin-oauth2', '~> 0.1.1'
 
+# Use Figaro to manage secret keys and env variables
+gem 'figaro'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
