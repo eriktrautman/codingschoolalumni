@@ -44,8 +44,9 @@ group :doc do
 end
 
 group :development do
-  gem 'better_errors'
-  gem 'binding_of_caller'
+  gem 'better_errors' # muuuuuch better error messages in browser
+  gem 'binding_of_caller' # for an interactive error shell
+  gem 'letter_opener' # to send emails in dev to the browser
 end
 
 # Use ActiveModel has_secure_password
