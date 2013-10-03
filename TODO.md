@@ -13,10 +13,10 @@ XXX set up javascript to autopopulate the cohorts
 XXX build linked-in signin functionality [oauth, add key to user model]
 XXX build the link to the database with the emails and user info
 XXX Refactor the crap out of the linkedin code!!! >> Model
-* build the mailchimp list integration
+XXX build the mailchimp list integration
 XXX Set up Gibbon
 XXX set up proper mailing list heirarchy / fields
-  ** Set up unsubscribe on delete functionality
+X?X Set up unsubscribe on delete functionality
   ** Set up basic hello and goodbye emails
 * build thank-you page basics
 * add social buttons to thank-you page
