@@ -5,5 +5,6 @@ Codingschoolalumni::Application.routes.draw do
   resources :users, :only => [:new]
   post "validate_user" => "users#validate_signup"
   get "/auth/linkedin/callback" => "users#create"
+  get "/thanks" => redirect("/thanks.html")
 
 end

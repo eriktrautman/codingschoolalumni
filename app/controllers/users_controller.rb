@@ -33,7 +33,7 @@ class UsersController < ApplicationController
             :cohort_id => cohort.id)
         if @user.save
           flash[:success] = "Success! You're all signed up... Now spread the word!"
-          redirect_to root_path
+          redirect_to thanks_path
         else
           flash[:error] = "We couldn't create your account due to the following errors: #{@user.errors.full_messages }!"
           redirect_to root_path
