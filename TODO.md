@@ -22,6 +22,6 @@ X?X Set up unsubscribe on delete functionality
 * add social buttons to thank-you page
   ** Create a twitter account
   ** Create a facebook page
-* build the actual mailchimp trickle / thank-you message
+* Set up the actual mailing service to use in production (mailgun?)
 * Note: linkedin tokens expire in 90 days!!!
-* 
+* Terms of service (no spamming, must be a bootcamper)

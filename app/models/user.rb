@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 
   after_save :subscribe
+  after_create :send_welcome
   before_destroy :unsubscribe
 
   belongs_to :cohort
@@ -36,8 +37,6 @@ class User < ActiveRecord::Base
   end
 
   # Unsubscribe user from the MailChimp mailing list
-  # UNTESTED... not sure this method "unsubscribe" actually
-  # exists.
   def unsubscribe
     mailchimp = Gibbon::API.new
     result = mailchimp.lists.unsubscribe({
@@ -48,7 +47,11 @@ class User < ActiveRecord::Base
       :send_goodbye => true
       })
     Rails.logger.info("Unsubscribed #{self.email} from MailChimp") if result
-    puts "\n\n\n\n\n\n UNSUBSCRIBED!!! \n\n\n\n\n\n"
+  end
+
+  # Use the internal mailer to send a welcome email
+  def send_welcome
+    UserMailer.welcome_email(self).deliver!
   end
 
 end
