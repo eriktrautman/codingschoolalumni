@@ -16,8 +16,8 @@ XXX Refactor the crap out of the linkedin code!!! >> Model
 XXX build the mailchimp list integration
 XXX Set up Gibbon
 XXX set up proper mailing list heirarchy / fields
-X?X Set up unsubscribe on delete functionality
-  ** Set up basic hello and goodbye emails
+XXX Set up unsubscribe on delete functionality
+XXX Set up basic hello email
 * build thank-you page basics
 * add social buttons to thank-you page
   ** Create a twitter account

@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-  require 'net/https'
-  require 'open-uri'
 
   def new
     @user = User.new
@@ -20,11 +18,8 @@ class UsersController < ApplicationController
   # it persists the already-entered information and 
   # redirects the user to the LinkedIn signup flow
   def validate_signup
-
-    puts "\n\n\n\n\n I neeed to be validated!! \n\n\n\n\n\n"
     session[:cohort_id] = params[:cohort_id]
     redirect_to "/auth/linkedin"
-
   end
 
   def create
