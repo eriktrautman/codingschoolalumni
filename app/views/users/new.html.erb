@@ -2,7 +2,6 @@
 <div id="splash-content-container">
   
   <h1>Coding School Alumni Association</h1>
-  
   <div class="top-explanation">
     <h3>
       The CSAA is a private network of alumni from select full-time vocationally-focused coding schools designed to help graduates connect with their future friends, coworkers and cofounders.
@@ -48,18 +47,6 @@
     <% end %>
   </div>
 
-<!--   I am before the linkedin stuff.
-
-  <script src="//platform.linkedin.com/in.js" type="text/javascript">
-        api_key: 3cnmfu8ljo81
-        authorize: false
-  </script>
-  <script type="in/Login">
-    Hello, <?js= firstName ?> <?js= lastName ?>.
-  </script>
-
-  I am after the linkedin stuff.
- -->
   <%= content_tag :div, :class => "cohort_list", :data => {cohort_list: @cohorts_list } do end%>
 
 </div>
