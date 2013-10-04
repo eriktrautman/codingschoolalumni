@@ -1,52 +1,71 @@
 
+
 <div id="splash-content-container">
   
-  <h1>Coding School Alumni Association</h1>
-  <div class="top-explanation">
-    <h3>
-      The CSAA is a private network of alumni from select full-time vocationally-focused coding schools designed to help graduates connect with their future friends, coworkers and cofounders.
-    </h3>
+  <div id="headline">
+    <h1>Coding School Alumni Association</h1>
   </div>
 
-  <div class="activities">
-    <ul>
-      <li>Jobs</li>
-      <li>Networking</li>
-      <li>Happy Hours</li>
-      <li>Special Events</li>
-      <li>Career Advice</li>
-      <li>Mentorship</li>
-      <li>Community</li>
-      <li>Education</li>
-      <li>Hacking</li>
-      <li>Co-Founding</li>
-      <li>Nerd Humor</li>
-      <li>Jobs</li>
-      <li>Hackathons</li>
-    </ul>
-  </div>
+  <div id="main-content">
+    <div class="top-explanation">
+      <h3>
+        The CSAA is a social and professional network of alumni from intensive coding schools that will help you connect with your future friends, coworkers, and cofounders.
+      </h3>
+    </div>
 
-  <div class="cta">
-    <h2>
-      Sign up for access to our alumni events and newsletter
-    </h2>
-  </div>
+    <p class="activities">
+        Jobs
+        &bull; Networking
+        &bull; Happy Hours
+        &bull; Special Events
+        &bull; Career Advice
+        &bull; Mentorship
+        &bull; Community
+        &bull; Education
+        &bull; Hacking
+        &bull; Co-Founding
+        &bull; Nerd Humor
+        &bull; Jobs
+        &bull; Hackathons
+    </p>
 
-  <div class="signup-form">
-    <%= form_for @user, :url => "validate_user",
-          :html => { :onsubmit => "return(validateForm())"} do |f| %>
-      <label>School:</label>
-      <%= collection_select :school, :school_id, @schools_list, :id, :name, :prompt => true %>
-      <label for="cohort_id">
-        Cohort:
-      </label>
-      <select name="cohort_id" id="cohort-combobox">
-        <option value>Select School First</option>
-      </select>
-      <%= f.submit :value => "Sign up FREE with LinkedIn" %>
-    <% end %>
-  </div>
+    <div class="cta">
+      <h2>
+        Sign up for access to our alumni events and newsletter
+      </h2>
+    </div>
 
+    <div class="signup-form">
+      <%= form_for @user, :url => "validate_user",
+            :html => { :onsubmit => "return(validateForm())"} do |f| %>
+        
+        <div id="school-inputs" class="inputs">
+          <label>
+            1. Select School
+          </label>
+          <%= collection_select :school, :school_id, @schools_list, :id, :name, :prompt => true %>
+        </div>
+
+        <div id="cohort-inputs" class="inputs">
+          <label for="cohort_id">
+            2. Select Cohort
+          </label>
+          <select name="cohort_id" id="cohort-combobox">
+            <option value>Select school first</option>
+          </select>
+        </div>
+
+        <div class="submit-button">
+          <%= f.submit :value => "3. Sign up FREE with LinkedIn" %>
+        </div>
+
+      <% end %>
+    </div>
+
+    <p id="help-line">
+        Questions or issues? <a href="mailto:erikcsaa@gmail.com">Email Erik</a>
+      </p>
+  </div>
   <%= content_tag :div, :class => "cohort_list", :data => {cohort_list: @cohorts_list } do end%>
 
 </div>

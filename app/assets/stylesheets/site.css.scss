@@ -1,0 +1,112 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+html{
+  background-size: cover;
+  // background-image: url("coding_school.jpg");
+  background-image: url("bg.jpg"); 
+  font-size: 75%;
+  padding: 0;
+}
+body{
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+p{
+  font-size: 1em;
+  line-height: 1.5em;
+}
+h3{
+  font-size: 1.25em;
+  line-height: 1.25em;
+}
+h2{
+  font-size: 2em;
+  line-height: 1.25em;
+}
+h1{
+  font-size: 2.75em;
+  line-height: 1.25em;
+}
+
+
+#splash-content-container{
+
+  padding: 50px auto;
+  margin-top: 5em;
+  margin-bottom: 10em;
+
+  #headline{
+    width: 60em;
+    height: 4.25em;
+    padding: 1em;
+    margin: 20px auto;
+    text-align: center;
+    background-color: rgba(240,240,240,1);
+
+    h1{
+      font-size: 3.25em;
+      margin: 0px 1em;
+      line-height: 1.25em;
+      font-variant: small-caps;
+    }
+  }
+
+  #main-content{
+    width: 45em;
+    background-color: rgba(240,240,240,1);
+    padding: 3em;
+    text-align: center;
+    margin: 0px auto;
+
+    .top-explanation{
+      // margin-bottom: 1.5em;
+    }
+    .activities{
+      margin: 2em 0;
+      color: #666;
+    }
+    .cta{
+      margin: 1.5em 0;
+    }
+    .signup-form{
+      .inputs{
+        display: inline-block;
+        margin: 0px 1em;
+        label{
+          display: block;
+          text-align: left;
+          font-size: 1.25em;
+          margin: .25em;
+        }
+        select{
+          font-size: 1.5em;
+          height: 1.5em;
+          width: 12em;
+          padding: 0px .5em;
+          line-height: 1.5em;
+          -webkit-appearance: none;
+          background: url("down_arrow_select.jpg") no-repeat right #eee;
+        }
+      }
+      .submit-button{
+        margin: 2em 0px;
+        input{
+          -webkit-appearance: none;
+          box-shadow: none;
+          -webkit-box-shadow: none;
+          -moz-box-shadow: none;
+          border-radius: .5em;
+          -webkit-border-radius: .5em;
+          -moz-border-radius: .5em;
+          border: 1px solid #357ebd;
+          background: #428bca;
+          height: 3em;
+          width: 20em;
+          font-size: 1.5em;
+          line-height: 1.5em;
+        }
+      }
+    }
+  }
+}
