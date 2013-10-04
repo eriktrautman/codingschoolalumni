@@ -20,11 +20,11 @@ XXX Set up unsubscribe on delete functionality
 XXX Set up basic hello email
 XXX build thank-you page basics
 XXX Debug the production unsubscribe (reset heroku console... lol)
-* Set up text version of welcome email
+XXX Set up text version of welcome email
 * add social buttons to thank-you page
   ** Create a twitter account
   ** Create a facebook page
-* Set up the actual mailing service to use in production (mailgun?)
+XXX Set up the actual mailing service to use in production (sendgrid)
 * Heroku Addons like NewRelic
 * Note: linkedin tokens expire in 90 days!!!
 * Terms of service (no spamming, must be a bootcamper)
