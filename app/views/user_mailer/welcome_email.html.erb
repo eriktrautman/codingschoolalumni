@@ -4,18 +4,19 @@
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
   </head>
   <body>
-    <h1>Welcome!</h1>
+    <hr>
+    <h1>Welcome, <%= @user.fname %>!</h1>
     <h2>
-      <%= @user.fname %>, you're now signed up for the Coding School Alumni Association.
-    </h2>
-    <h2>
-      Stay tuned for what comes next!
+      You're now signed up for the Coding School Alumni Association.
     </h2>
     <p>
-      We'll be hosting events and staying in touch but where we go from there is largely up to you.  Let us know what you want!  We've got the power of a large group of amazing people behind us and can use it to pull together some pretty exciting stuff: speakers, networking, education, hackathons... you name it.  
+      We'll be hosting events and staying in touch but where we go from here is largely up to you.  Let us know what you want!
+    </p>
+    <p>  
+      We've got the power of a large group of amazing people behind us and can use it to pull together some pretty exciting stuff: speakers, networking, education, hackathons... you name it, you got it.  
     </p>
     <p>
-      Also, if you'd like to get involved and help organize or contribute in any way, reach out to <a href="mailto:erikcsaa@gmail.com">erikcsaa@gmail.com</a>.
+      Also, if you'd like to get involved and help organize or contribute in any way, please let me know at <a href="mailto:erikcsaa@gmail.com">erikcsaa@gmail.com</a>.
     </p>
     <p>
       I can't wait to see you out at our next event!
@@ -52,6 +53,8 @@
   p{
     font-size: 1em;
     line-height: 1.5em;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
   }
   p.signature{
     line-height: 1.25em;
