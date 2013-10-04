@@ -19,6 +19,7 @@ XXX set up proper mailing list heirarchy / fields
 XXX Set up unsubscribe on delete functionality
 XXX Set up basic hello email
 XXX build thank-you page basics
+XXX Debug the production unsubscribe (reset heroku console... lol)
 * Set up text version of welcome email
 * add social buttons to thank-you page
   ** Create a twitter account
