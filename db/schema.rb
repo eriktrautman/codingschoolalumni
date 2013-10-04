@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131002222031) do
+ActiveRecord::Schema.define(version: 20131004010834) do
 
   create_table "campuses", force: true do |t|
     t.integer  "school_id"
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20131002222031) do
   end
 
   add_index "cohorts", ["end_date"], name: "index_cohorts_on_end_date"
-  add_index "cohorts", ["start_date", "end_date"], name: "index_cohorts_on_start_date_and_end_date", unique: true
+  add_index "cohorts", ["start_date", "end_date"], name: "index_cohorts_on_start_date_and_end_date"
   add_index "cohorts", ["start_date"], name: "index_cohorts_on_start_date"
 
   create_table "schools", force: true do |t|

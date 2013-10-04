@@ -66,7 +66,7 @@
       if(cohortList != null){
         cohortList.forEach(function(data){
           console.log(data);
-          if(data.id == selectedSchoolId){
+          if(data.school_id == selectedSchoolId){
             var start = new Date(data.start_date);
             var finish = new Date(data.end_date);
             var innerText =   data.city + ": " +
