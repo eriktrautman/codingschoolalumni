@@ -3,13 +3,17 @@ class UsersController < ApplicationController
   def new
     @user = User.new
     @schools_list = School.all
-    @cohorts_list = Cohort.includes(:city).map do |c|
+    cohort_show_cutoff = Date.today + 1.week
+    @cohorts_list = Cohort.includes(:city)
+        .where("cohorts.end_date < ?", cohort_show_cutoff)
+        .order(:city_id => :asc, :end_date => :asc)
+        .map do |c|
       {
         :id => c.id, 
         :city => c.city.abbrev,
         :end_date => c.end_date,
         :start_date => c.start_date,
-        :school_id => c.school_id
+        :school_id => c.school_id,
       }
     end
   end
