@@ -86,6 +86,7 @@ GEM
     multi_json (1.8.0)
     multi_xml (0.5.5)
     multipart-post (1.2.0)
+    newrelic_rpm (3.6.7.159)
     oauth2 (0.8.1)
       faraday (~> 0.8)
       httpauth (~> 0.1)
@@ -171,6 +172,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   letter_opener
+  newrelic_rpm
   omniauth (~> 1.1.4)
   omniauth-linkedin-oauth2 (~> 0.1.1)
   pg
