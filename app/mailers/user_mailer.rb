@@ -3,7 +3,7 @@ class UserMailer < ActionMailer::Base
 
   def welcome_email(user)
     @user = user
-    mail(to: @user.email, from: "erikcsaa@gmail.com", :subject => "Signup Confirmation")
+    mail(to: @user.email, from: "erikcsaa@gmail.com", :subject => "CSAA Signup Confirmation")
   end
 
 end
