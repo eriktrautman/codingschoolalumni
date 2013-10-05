@@ -44,6 +44,7 @@ class UsersController < ApplicationController
         end
       else
         flash[:error] = "Error! We got your LinkedIn credentials but the cohort that you selected wasn't valid.  Could be our fault..."
+        redirect_to root_path
       end
     else
       flash[:error] = "Error! We got your LinkedIn credentials but couldn't find the cohort_id you selected originally.  Probably our fault."
