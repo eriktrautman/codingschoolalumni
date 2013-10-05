@@ -20,7 +20,6 @@ h3{
   font-size: 1.75em;
   line-height: 1.1em;
   font-weight: 600;
-  font-variant: small-caps;
 }
 h2{
   font-size: 2.25em;
@@ -67,10 +66,39 @@ strong{
 
     .top-explanation{
       width: 85%;
-      margin: 9em auto 0 auto;
+      margin: 10.5em auto 3em auto;
+      font-variant: small-caps;
+    }
+    .sub-explanation{
+      margin: 3em 0;
+      h3{
+        // font-weight: 300;
+        // font-style: italic;
+        font-variant: small-caps;
+      }
+    }
+    .thank-you-text{
+      margin: 3em 0;
+      a.referral-link{
+        font-size: 1.25em;
+        color: blue;
+      }
+      h3{
+        margin: 1em 0;
+      }
+      p{
+        font-size: 1.25em;
+        margin: 2em;
+      }
+      .plea{
+        color: red;
+        // font-style: italic;
+        font-variant: small-caps;
+        font-size: 2em;
+      }
     }
     .activities{
-      margin: 3em 0;
+      margin: 2em 0;
       color: #555;
     }
     .cta{
@@ -99,7 +127,7 @@ strong{
         }
       }
       .submit-button{
-        margin: 3em 0px 4em 0px;
+        margin: 4em 0px 4em 0px;
         input{
           font-size: 1.75em;
           line-height: 1.5em;

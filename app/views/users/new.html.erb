@@ -11,7 +11,34 @@
   </div>
 
   <div id="main-content">
-    <%= render :partial => "splash.html" %>
+
+    <% if @thanks %>
+      <%= render :partial => "thanks.html" %>
+    <% else %>
+      <%= render :partial => "splash.html", :locals => {:cohorts_list => @cohorts_list, :schools_list => @schools_list, :user => @user} %>
+    <% end %>
+
+    <hr>
+
+    <div class="activities">
+      <p>
+        Happy Hours
+        &bull; Networking
+        &bull; Special Events
+        &bull; Career Advice
+        &bull; Mentorship
+        &bull; Community
+        &bull; Education
+        &bull; Hacking
+        &bull; Co-Founding
+        &bull; Nerd Humor
+        &bull; Jobs
+        &bull; Side Projects
+        &bull; Tech Talks
+        &bull; Hackathons
+      </p>
+    </div>
+
   </div>
 
   <div id="help-line">

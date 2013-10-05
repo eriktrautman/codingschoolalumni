@@ -5,22 +5,6 @@
   </h3>
 </div>
 
-<p class="activities">
-    Happy Hours
-    <!-- &bull; Jobs -->
-    &bull; Networking
-    &bull; Special Events
-    &bull; Career Advice
-    &bull; Mentorship
-    &bull; Community
-    &bull; Education
-    &bull; Hacking
-    &bull; Co-Founding
-    &bull; Nerd Humor
-    &bull; Jobs
-    &bull; Tech Talks
-    &bull; Hackathons
-</p>
 
 <hr>
 
@@ -31,14 +15,14 @@
 </div>
 
 <div class="signup-form">
-  <%= form_for @user, :url => "validate_user",
+  <%= form_for user, :url => "validate_user",
         :html => { :onsubmit => "return(validateForm())"} do |f| %>
     
     <div id="school-inputs" class="inputs">
       <label>
         1. Select School
       </label>
-      <%= collection_select :school, :school_id, @schools_list, :id, :name, :prompt => true %>
+      <%= collection_select :school, :school_id, schools_list, :id, :name, :prompt => true %>
     </div>
 
     <div id="cohort-inputs" class="inputs">
@@ -57,7 +41,8 @@
   <% end %>
 </div>
 
-<%= content_tag :div, :class => "cohort_list", :data => {cohort_list: @cohorts_list } do end%>
+
+<%= content_tag :div, :class => "cohort_list", :data => {cohort_list: cohorts_list } do end%>
 
 <script>
   $(function(){

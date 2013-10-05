@@ -4,6 +4,7 @@ class UsersController < ApplicationController
     @user = User.new
     @schools_list = School.all
     cohort_show_cutoff = Date.today + 1.week
+    @thanks = params[:thanks]
     @cohorts_list = Cohort.includes(:city)
         .where("cohorts.end_date < ?", cohort_show_cutoff)
         .order(:city_id => :asc, :end_date => :asc)
@@ -36,7 +37,7 @@ class UsersController < ApplicationController
             :lname => auth_hash[:info][:last_name],
             :cohort_id => cohort.id)
         if @user.save
-          redirect_to thanks_path
+          redirect_to root_path(:thanks => true)
         else
           flash[:error] = "We couldn't create your account due to the following errors: #{@user.errors.full_messages }!"
           redirect_to root_path
