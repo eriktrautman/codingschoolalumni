@@ -4,7 +4,7 @@
 
 html{
   background-size: cover;
-  background-image: url("bg.jpg"); 
+  background-image: url(image_path("bg.jpg")); 
   font-size: 75%;
   padding: 0;
 }
@@ -126,7 +126,7 @@ strong{
           padding: 0px .5em;
           line-height: 1.5em;
           -webkit-appearance: none;
-          background: url("down_arrow_select.jpg") no-repeat right #eee;
+          background: url(image_path("down_arrow_select.jpg")) no-repeat right #eee;
         }
       }
       .submit-button{
