@@ -68,9 +68,12 @@ strong{
       width: 85%;
       margin: 10.5em auto 3em auto;
       font-variant: small-caps;
+      h1{
+        font-size: 3.25em;
+      }
     }
     .sub-explanation{
-      margin: 3em 0;
+      margin: -2em 0 4em 0;
       h3{
         // font-weight: 300;
         // font-style: italic;
@@ -84,7 +87,7 @@ strong{
         color: blue;
       }
       h3{
-        margin: 1em 0;
+        margin: .75em 0;
       }
       p{
         font-size: 1.25em;
