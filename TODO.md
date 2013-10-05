@@ -23,6 +23,9 @@ XXX Debug the production unsubscribe (reset heroku console... lol)
 XXX Set up text version of welcome email
 XXX Set up the actual mailing service to use in production (sendgrid)
 XXX Heroku Addons like NewRelic
+* Purchase and map domain
+* Set up domain emailing with Google Apps
+* Clean up welcome email
 
 Future:
 * add social buttons to thank-you page
