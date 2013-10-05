@@ -11,22 +11,29 @@ html{
 }
 body{
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  color: #036;
 }
 p{
   font-size: 1em;
   line-height: 1.5em;
 }
 h3{
-  font-size: 1.25em;
-  line-height: 1.25em;
+  font-size: 1.75em;
+  line-height: 1.1em;
+  // font-style: italic;
+  font-weight: 600;
+  font-variant: small-caps;
 }
 h2{
-  font-size: 2em;
+  font-size: 2.25em;
   line-height: 1.25em;
 }
 h1{
   font-size: 2.75em;
   line-height: 1.25em;
+}
+strong{
+  font-weight: bold;
 }
 
 
@@ -36,38 +43,44 @@ h1{
   margin-top: 5em;
   margin-bottom: 10em;
 
-  #headline{
-    width: 60em;
-    height: 4.25em;
-    padding: 1em;
-    margin: 20px auto;
-    text-align: center;
-    background-color: rgba(240,240,240,1);
+  // #headline{
+  //   width: 60em;
+  //   height: 4.25em;
+  //   padding: 1em;
+  //   margin: 20px auto;
+  //   text-align: center;
+  //   background-color: rgba(240,240,240,1);
 
-    h1{
-      font-size: 3.25em;
-      margin: 0px 1em;
-      line-height: 1.25em;
-      font-variant: small-caps;
-    }
-  }
+  //   h1{
+  //     font-size: 3.25em;
+  //     margin: 0px 1em;
+  //     line-height: 1.25em;
+  //     font-variant: small-caps;
+  //   }
+  // }
 
   #main-content{
     width: 45em;
-    background-color: rgba(240,240,240,1);
-    padding: 3em;
+    // background-color: rgba(240,240,240,1);
+    background-color: #FFE;
+    border-radius: 1.5em;
+    -moz-border-radius: 1.5em;
+    -webkit-border-radius: 1.5em;
+    padding: 2em 2em 1px 2em;
     text-align: center;
-    margin: 0px auto;
+    margin: -9em auto 0px auto;
 
     .top-explanation{
-      // margin-bottom: 1.5em;
+      width: 85%;
+      margin: 9em auto 0 auto;
     }
     .activities{
-      margin: 2em 0;
-      color: #666;
+      margin: 3em 0;
+      color: #555;
     }
     .cta{
-      margin: 1.5em 0;
+      margin: 2em 0;
+      // white-space: nowrap;
     }
     .signup-form{
       .inputs{
@@ -75,23 +88,37 @@ h1{
         margin: 0px 1em;
         label{
           display: block;
+          font-weight: bold;
           text-align: left;
           font-size: 1.25em;
-          margin: .25em;
+          margin: .5em .25em;
         }
         select{
           font-size: 1.5em;
+          cursor: pointer;
           height: 1.5em;
-          width: 12em;
+          width: 13em;
           padding: 0px .5em;
           line-height: 1.5em;
           -webkit-appearance: none;
           background: url("down_arrow_select.jpg") no-repeat right #eee;
         }
+        // select[name="cohort_id"]{
+        //   width: 15em;
+        // } 
       }
       .submit-button{
-        margin: 2em 0px;
+        margin: 3em 0px 4em 0px;
         input{
+          font-size: 1.75em;
+          line-height: 1.5em;
+          color: #ffe;
+          text-shadow: #ab2c2c 0 1px 0;
+          border: 1px solid #ab2c2c;
+          background: #d64b4b;
+          height: 3em;
+          width: 20em;
+          cursor: pointer;
           -webkit-appearance: none;
           box-shadow: none;
           -webkit-box-shadow: none;
@@ -99,14 +126,103 @@ h1{
           border-radius: .5em;
           -webkit-border-radius: .5em;
           -moz-border-radius: .5em;
-          border: 1px solid #357ebd;
-          background: #428bca;
-          height: 3em;
-          width: 20em;
-          font-size: 1.5em;
-          line-height: 1.5em;
         }
       }
     }
   }
+  #help-line{
+    text-align: center;
+    font-size: 1.25em;
+    margin-top: 1em;
+    color: white;
+    a{
+      color: #aaf;
+    }
+  }
+  #headline-ribbon{
+    // text-align: center;
+    width: 60em;
+    margin: auto;
+  }
+  .ribbon {
+   font-size: 2em!important;
+   width: 30em;
+   position: relative;
+   padding-top: 1px;
+   padding-bottom: 1px;
+   text-align: center;
+   background: #d64b4b;
+   background: -webkit-gradient(linear, left top, left bottom, from(#d64b4b), to(#ab2c2c));
+   background: -webkit-linear-gradient(top, #d64b4b, #ab2c2c);
+   background: -moz-linear-gradient(top, #d64b4b, #ab2c2c);
+   background: -ms-linear-gradient(top, #d64b4b, #ab2c2c);
+   background: -o-linear-gradient(top, #d64b4b, #ab2c2c);
+   background-image: -ms-linear-gradient(top, #d64b4b 0%, #ab2c2c 100%);
+   -webkit-box-shadow: rgba(000,000,000,0.3) 0 1px 1px;
+   -moz-box-shadow: rgba(000,000,000,0.3) 0 1px 1px;
+   box-shadow: rgba(000,000,000,0.3) 0 1px 1px;
+   font-family: 'Helvetica Neue',Helvetica, sans-serif;
+   }
+.ribbon h1 {
+   font-size: 1.5em!important;
+   color: #701111;
+   text-shadow: #d65c5c 0 1px 0;
+   margin:0px;
+   padding: 15px 10px;
+   font-variant: small-caps;
+   }
+.ribbon:before, .ribbon:after {
+   content: '';
+   position: absolute;
+   display: block;
+   bottom: -1em;
+   border: 1.5em solid #c23a3a;
+   z-index: -1;
+   }
+.ribbon:before {
+   left: -2em;
+   border-right-width: 1.5em;
+   border-left-color: transparent;
+   -webkit-box-shadow: rgba(000,000,000,0.4) 1px 1px 1px;
+   -moz-box-shadow: rgba(000,000,000,0.4) 1px 1px 1px;
+   box-shadow: rgba(000,000,000,0.4) 1px 1px 1px;
+   }
+.ribbon:after {
+   right: -2em;
+   border-left-width: 1.5em;
+   border-right-color: transparent;
+   -webkit-box-shadow: rgba(000,000,000,0.4) -1px 1px 1px;
+   -moz-box-shadow: rgba(000,000,000,0.4) -1px 1px 1px;
+   box-shadow: rgba(000,000,000,0.4) -1px 1px 1px;
+   }
+.ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
+   border-color: #871616 transparent transparent transparent;
+   position: absolute;
+   display: block;
+   border-style: solid;
+   bottom: -1em;
+   content: '';
+   }
+.ribbon .ribbon-content:before {
+   left: 0;
+   border-width: 1em 0 0 1em;
+   }
+.ribbon .ribbon-content:after {
+   right: 0;
+   border-width: 1em 1em 0 0;
+   }
+.ribbon-stitches-top {
+   margin-top:2px;
+   border-top: 1px dashed rgba(0, 0, 0, 0.2);
+   -moz-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+   -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+   box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.5);
+   }
+.ribbon-stitches-bottom {
+   margin-bottom:2px;
+   border-top: 1px dashed rgba(0, 0, 0, 0.2);
+   -moz-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+   -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+   box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.3);
+   }
 }

@@ -1,0 +1,104 @@
+
+<div class="top-explanation">
+  <h3>
+    The CSAA is a network of alumni from intensive coding schools that will help you connect with your future friends, coworkers, and cofounders.
+  </h3>
+</div>
+
+<p class="activities">
+    Happy Hours
+    <!-- &bull; Jobs -->
+    &bull; Networking
+    &bull; Special Events
+    &bull; Career Advice
+    &bull; Mentorship
+    &bull; Community
+    &bull; Education
+    &bull; Hacking
+    &bull; Co-Founding
+    &bull; Nerd Humor
+    &bull; Jobs
+    &bull; Tech Talks
+    &bull; Hackathons
+</p>
+
+<hr>
+
+<div class="cta">
+  <h2>
+    Sign up below for access to our alumni events and newsletter
+  </h2>
+</div>
+
+<div class="signup-form">
+  <%= form_for @user, :url => "validate_user",
+        :html => { :onsubmit => "return(validateForm())"} do |f| %>
+    
+    <div id="school-inputs" class="inputs">
+      <label>
+        1. Select School
+      </label>
+      <%= collection_select :school, :school_id, @schools_list, :id, :name, :prompt => true %>
+    </div>
+
+    <div id="cohort-inputs" class="inputs">
+      <label for="cohort_id">
+        2. Select Cohort
+      </label>
+      <select name="cohort_id" id="cohort-combobox">
+        <option value> </option>
+      </select>
+    </div>
+
+    <div class="submit-button">
+      <%= f.submit :value => "3. Sign up FREE with LinkedIn" %>
+    </div>
+
+  <% end %>
+</div>
+
+<%= content_tag :div, :class => "cohort_list", :data => {cohort_list: @cohorts_list } do end%>
+
+<script>
+  $(function(){
+
+    // on selection made or change made to the school box
+    // grab the cohort data and display it for that cohort only
+    $("#school_school_id").change(function(){
+
+      $("#cohort-combobox").html("<option value>Please Select</option>");
+      var selectedSchoolId = $(this).val();
+      var cohortList = $(".cohort_list").data("cohort-list")
+
+      // create a new select box in the right place for each item
+      if(cohortList != null){
+        cohortList.forEach(function(data){
+          console.log(data);
+          if(data.school_id == selectedSchoolId){
+            var start = new Date(data.start_date);
+            var finish = new Date(data.end_date);
+            var innerText =   data.city + ": " +
+                              (start.getMonth() + 1) + "/" + 
+                              start.getDate() + "/" +
+                              (start.getFullYear() - 2000) + " to " +
+                              (finish.getMonth() + 1) + "/" + 
+                              finish.getDate() + "/" +
+                              (finish.getFullYear() - 2000);
+            $("#cohort-combobox").append("<option value='" + data.id + "'>" + innerText + "</option>");
+          }
+        })
+      }
+    })
+  });
+    
+  // validate the form to make sure it's filled out properly
+  function validateForm(){
+    if($("#cohort-combobox").val() == ""){
+      alert("Please select your school and cohort \nIf yours isn't here, please email erikcsaa@gmail.com");
+      return false;
+    }
+    return true;
+  }
+
+</script>
+
