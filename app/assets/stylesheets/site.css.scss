@@ -4,7 +4,6 @@
 
 html{
   background-size: cover;
-  // background-image: url("coding_school.jpg");
   background-image: url("bg.jpg"); 
   font-size: 75%;
   padding: 0;
@@ -20,7 +19,6 @@ p{
 h3{
   font-size: 1.75em;
   line-height: 1.1em;
-  // font-style: italic;
   font-weight: 600;
   font-variant: small-caps;
 }
@@ -43,25 +41,8 @@ strong{
   margin-top: 5em;
   margin-bottom: 10em;
 
-  // #headline{
-  //   width: 60em;
-  //   height: 4.25em;
-  //   padding: 1em;
-  //   margin: 20px auto;
-  //   text-align: center;
-  //   background-color: rgba(240,240,240,1);
-
-  //   h1{
-  //     font-size: 3.25em;
-  //     margin: 0px 1em;
-  //     line-height: 1.25em;
-  //     font-variant: small-caps;
-  //   }
-  // }
-
   #main-content{
     width: 45em;
-    // background-color: rgba(240,240,240,1);
     background-color: #FFE;
     border-radius: 1.5em;
     -moz-border-radius: 1.5em;
@@ -80,7 +61,6 @@ strong{
     }
     .cta{
       margin: 2em 0;
-      // white-space: nowrap;
     }
     .signup-form{
       .inputs{
@@ -103,9 +83,6 @@ strong{
           -webkit-appearance: none;
           background: url("down_arrow_select.jpg") no-repeat right #eee;
         }
-        // select[name="cohort_id"]{
-        //   width: 15em;
-        // } 
       }
       .submit-button{
         margin: 3em 0px 4em 0px;
@@ -140,7 +117,6 @@ strong{
     }
   }
   #headline-ribbon{
-    // text-align: center;
     width: 60em;
     margin: auto;
   }
