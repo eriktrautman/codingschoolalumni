@@ -34,6 +34,20 @@ strong{
   font-weight: bold;
 }
 
+.alert{
+  background-color: #ffe;
+  font-size: 2em;
+  text-align: center;
+  padding: .5em;
+  button{
+    padding: .5em;
+    margin: -.25em 1em 0 1em;
+  }
+}
+.alert-error{
+  color: red;
+}
+
 
 #splash-content-container{
 
