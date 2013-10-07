@@ -24,8 +24,11 @@ gem 'figaro'
 # Must use the github version to use 0.0.5
 gem 'gibbon', git: 'git://github.com/amro/gibbon.git'
 
-# set up New Relic application monitoring
+# Set up New Relic application monitoring
 gem 'newrelic_rpm'
+
+# Make GA actually register pages [fixing Turbolinks issue with that]
+gem 'google-analytics-turbolinks'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
