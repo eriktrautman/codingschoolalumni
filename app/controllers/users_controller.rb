@@ -35,6 +35,7 @@ class UsersController < ApplicationController
             :email => auth_hash[:info][:email], 
             :fname => auth_hash[:info][:first_name],
             :lname => auth_hash[:info][:last_name],
+            :linkedin_token => auth_hash[:credentials][:token],
             :cohort_id => cohort.id)
         if @user.save
           redirect_to root_path(:thanks => true)
