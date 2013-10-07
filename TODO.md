@@ -25,8 +25,8 @@ XXX Set up the actual mailing service to use in production (sendgrid)
 XXX Heroku Addons like NewRelic
 XXX Purchase and map domain
 XXX Save the LinkedIn access token
-* Add GA (with turbolinks!)
-* Setup GA conversion tracking
+XXX Add GA (with turbolinks!)
+XXX Setup GA conversion tracking
 * Set up domain emailing with Google Apps
 * Clean up welcome email, unsubscribe email
 
