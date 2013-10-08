@@ -4,47 +4,60 @@
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
   </head>
   <body>
-    <h1>Welcome, <%= @user.fname %>!</h1>
-    <h2>
-      You're now signed up for the Coding School Alumni Association.
-    </h2>
-    <p>
-      We'll be hosting events and staying in touch but where we go from here is largely up to you.  Let us know what you want!
-    </p>
-    <p>  
-      We've got the power of a large group of amazing people behind us and can use it to pull together some pretty exciting stuff: speakers, networking, education, hackathons... you name it, you got it.  
-    </p>
-    <p>
-      Also, if you'd like to get involved and help organize or contribute in any way, please let me know at <a href="mailto:erikcsaa@gmail.com">erikcsaa@gmail.com</a>.
-    </p>
-    <p>
-      I can't wait to see you out at our next event!
-    </p>
-    <p>
-      Sincerely,
-    </p>
-    <p class="signature">
-      Erik Trautman <br>
-      President, CSAA
-    </p>
-    <hr>
-    <p class="about">
-      The CSAA is a social and professional network of alumni from fulltime intensive coding schools that is dedicated to helping its members connect with each other and accelerate their careers.
-    </p>
+    <div id="container">
+      <div id="banner">Coding School Alumni Association</div>
+      <div id="content">
+        <h1>Welcome, <%= @user.fname %>!</h1>
+        <h2 class="subheading">
+          You're now signed up for the Coding School Alumni Association.
+        </h2>
+        <hr>
+        <div id="text">
+          <p>
+            We'll be hosting events and staying in touch but where we go from here is largely up to you.  Let us know what you want!
+          </p>
+          <p>  
+            We've got the power of a large group of amazing people behind us and can use it to pull together some pretty exciting stuff: speakers, networking, education, hackathons... you name it, you got it.  
+          </p>
+          <p>
+            Also, if you'd like to get involved and help organize or contribute in any way, please let me know at <a href="mailto:erikcsaa@gmail.com">erikcsaa@gmail.com</a>.
+          </p>
+          <p>
+            I can't wait to see you out at our next event!
+          </p>
+          <p>
+            Sincerely,
+          </p>
+          <p class="signature">
+            Erik Trautman <br>
+            President, CSAA
+          </p>
+        </div>
+        <hr>
+        <p class="about">
+          The CSAA is a social and professional network of alumni from fulltime intensive coding schools that is dedicated to helping its members connect with each other and accelerate their careers.
+        </p>
+      </div>
+    </div>
   </body>
 </html>
 
 <style>
+  html{
+  }
   body{
+    background-color: #1F4166;
     font-size: 100%;
-    width: 30em; 
-    margin: 30px;
+    width: 45em;
   }
   h1{
     font-size: 2.25em;
+    border: none;
   }
   h2{
     font-size: 1.5em;
+    line-height: 1.25em;
+    border: none;
   }
   h3{
     font-size: 1.25em;
@@ -55,9 +68,32 @@
     margin-top: 1.5em;
     margin-bottom: 1.5em;
   }
+  #container{
+    margin: 30px auto;
+    width: 36em; 
+    background-color: #ffe;
+    border: 1px solid #701111;
+  }
+  #content{
+    color: #036;
+    padding: 1em 2em;
+  }
+  #banner{
+    font-variant: small-caps;
+    font-size: 1.75em;
+    line-height: 2em;
+    background-color: #d64b4b;
+    color: #701111;
+    text-align: center;
+  }
+  #text{
+    margin: 2em auto 3em auto;
+  }
+  h2.subheading{
+    margin-bottom: .75em;
+  }
   p.signature{
     line-height: 1.25em;
-    margin-bottom: 3em;
   }
   p.about{
     font-style: italic;
@@ -65,4 +101,5 @@
     margin-bottom: 2em;
     font-size: .8em;
   }
+
 </style>
