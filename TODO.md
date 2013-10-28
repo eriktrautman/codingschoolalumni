@@ -1,5 +1,16 @@
 TODO
 
+Future:
+* Alter welcome email to mention first event, CTA
+* Alter thank you page for stronger event CTA
+* Set up domain emailing with Google Apps
+* add social buttons to thank-you page
+  ** Create a twitter account
+  ** Create a facebook page
+* Terms of service (no spamming, must be a bootcamper)
+* Note: linkedin tokens expire in 90 days!!!
+
+DONE Add flier decal for first event
 XXX build user model [email, school_id, cohort_id]
 XXX build school model [name]
 XXX build cohort model [start date, end date, school_id, city_id]
@@ -27,12 +38,4 @@ XXX Purchase and map domain
 XXX Save the LinkedIn access token
 XXX Add GA (with turbolinks!)
 XXX Setup GA conversion tracking
-* Set up domain emailing with Google Apps
-* Clean up welcome email, unsubscribe email
-
-Future:
-* add social buttons to thank-you page
-  ** Create a twitter account
-  ** Create a facebook page
-* Terms of service (no spamming, must be a bootcamper)
-* Note: linkedin tokens expire in 90 days!!!
+XXX Clean up welcome email, 
