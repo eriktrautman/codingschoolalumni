@@ -2,7 +2,7 @@ TODO
 
 Future:
 * Alter welcome email to mention first event, CTA
-* Alter thank you page for stronger event CTA
+* Alter thank you page to remove "kickoff" and go to "next" event
 * Set up domain emailing with Google Apps
 * add social buttons to thank-you page
   ** Create a twitter account
