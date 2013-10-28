@@ -2,13 +2,14 @@ TODO
 
 Future:
 * Alter thank you page to remove "kickoff" and go to "next" event
-* Set up domain emailing with Google Apps
 * add social buttons to thank-you page
   ** Create a twitter account
   ** Create a facebook page
 * Terms of service (no spamming, must be a bootcamper)
 * Note: linkedin tokens expire in 90 days!!!
+DELAY Set up domain emailing with Google Apps
 
+DONE Address LinkedIn FUDS
 DONE Alter welcome email to mention first event, CTA
 DONE Add flier decal for first event
 XXX build user model [email, school_id, cohort_id]
