@@ -21,7 +21,7 @@ School.create(:name=>"Hack Reactor")
 School.create(:name=>"Hackbright Academy")
 School.create(:name=>"General Assembly") # New
 
-# **************** APP ACADEMY ********************
+# ************************ APP ACADEMY *****************************
 # SF App Academy
 
 {
