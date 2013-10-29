@@ -13,19 +13,19 @@
 City.create(:name=>"San Francisco", :abbrev=>"SF")
 City.create(:name=>"New York City", :abbrev=>"NYC")
 City.create(:name=>"Chicago", :abbrev=>"CHI")
-City.create(:name=>"Boston", :abbrev=>"BOS") # New
-City.create(:name=>"Los Angeles", :abbrev=>"LA") # New
-City.create(:name=>"London", :abbrev=>"LOND") # New
-City.create(:name=>"Berlin", :abbrev=>"BERL") # New
-City.create(:name=>"Hong Kong", :abbrev=>"HK") # New
-City.create(:name=>"Sydney", :abbrev=>"SYD") # New
+City.create(:name=>"Boston", :abbrev=>"BOS")
+City.create(:name=>"Los Angeles", :abbrev=>"LA")
+City.create(:name=>"London", :abbrev=>"LOND")
+City.create(:name=>"Berlin", :abbrev=>"BERL")
+City.create(:name=>"Hong Kong", :abbrev=>"HK")
+City.create(:name=>"Sydney", :abbrev=>"SYD")
 
 # Schools (unique constraint on name)
 School.create(:name=>"App Academy")
 School.create(:name=>"Dev Bootcamp")
 School.create(:name=>"Hack Reactor")
 School.create(:name=>"Hackbright Academy")
-School.create(:name=>"General Assembly") # New
+School.create(:name=>"General Assembly")
 
 # ************************ APP ACADEMY *****************************
 # SF App Academy
