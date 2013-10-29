@@ -1,4 +1,5 @@
 TODO
+* Change "Cohort" to "Class" on home page
 
 Future:
 * Alter thank you page to remove "kickoff" and go to "next" event

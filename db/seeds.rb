@@ -3,6 +3,12 @@
 # NOTE: Only the General Assembly cohorts don't include hard coding
 # of school and city IDs (though still use finds)
 
+# NOTE2: This will not work properly if overlapped with a previous
+# seed... so you'll have to manually enter the changes to the DB if
+# you've already been using it for a little while (the IDs are hard
+# coded and the cohorts don't have unique constraints so they would
+# double up)
+
 # Cities (unique constraint on name)
 City.create(:name=>"San Francisco", :abbrev=>"SF")
 City.create(:name=>"New York City", :abbrev=>"NYC")
