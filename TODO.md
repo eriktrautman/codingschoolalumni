@@ -1,4 +1,5 @@
 TODO
+* Add more future cohorts
 
 Future:
 * Alter thank you page to remove "kickoff" and go to "next" event
@@ -9,6 +10,7 @@ Future:
 * Note: linkedin tokens expire in 90 days!!!
 DELAY Set up domain emailing with Google Apps
 
+DONE Add GA to seeds
 DONE Address LinkedIn FUDS
 DONE Alter welcome email to mention first event, CTA
 DONE Add flier decal for first event
