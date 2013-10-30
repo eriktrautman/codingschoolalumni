@@ -1,5 +1,6 @@
 TODO
-* Change "Cohort" to "Class" on home page
+* Add alternate signup flow views
+* Controller for alternate signup flow
 
 Future:
 * Alter thank you page to remove "kickoff" and go to "next" event
@@ -10,6 +11,7 @@ Future:
 * Note: linkedin tokens expire in 90 days!!!
 DELAY Set up domain emailing with Google Apps
 
+DONE Change "Cohort" to "Class" on home page
 DONE Add more future cohorts
 DONE Add GA to seeds
 DONE Address LinkedIn FUDS
