@@ -37,8 +37,37 @@
       </select>
     </div>
 
-    <div class="submit-button">
-      <%= f.submit :value => "3. Sign up FREE with LinkedIn" %>
+    <div class="alt-signup inputs">
+      <div class="input-pair">
+        <%= f.label :fname, "3. First Name" %>
+        <%= f.text_field :fname %>
+      </div>
+      <div class="input-pair">
+        <%= f.label :lname, "4. Last Name" %>
+        <%= f.text_field :lname %>
+      </div>
+      <div class="input-pair">
+        <%= f.label :email, "5. Email" %>
+        <%= f.text_field :email %>
+      </div>
+
+      <div class="submit-button alt-signup">
+        <%= f.submit :value => "6. Sign up (free)" %>
+        <div class="alt-signup-link">
+          <a href="javascript:void(0)" onClick="showMainSignup()">Umm, I forgot, I actually do have a LinkedIn profile...</a><br>
+        </div>
+        <div class="fuds">
+          We hate SPAM as much as you do.<br>  We will verify that you're a real homo sapien... ahem, graduate.
+        </div>
+      </div>
+    </div>
+
+    <div class="submit-button main-signup">
+      <%= f.submit :value => "3. Sign up (free) with LinkedIn" %>
+        
+      <div class="alt-signup-link">
+        <a href="javascript:void(0)" onClick="showAltSignup()">I don't have a LinkedIn profile!</a><br>
+      </div>
       <div class="fuds">
         We hate SPAM as much as you do.<br>  LinkedIn is used to verify that you're a real humanoid... ahem, graduate.
       </div>
@@ -91,5 +120,16 @@
     return true;
   }
 
+  // switch from the linkedin submission to the alternate form
+  function showAltSignup(){
+    $(".alt-signup").slideDown();
+    $(".main-signup").fadeOut();
+  }
+
+  // switch from the alt submission to the linkedin submission
+  function showMainSignup(){
+    $(".alt-signup").slideUp();
+    $(".main-signup").fadeIn();
+  }
 </script>
 

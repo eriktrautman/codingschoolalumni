@@ -144,6 +144,18 @@ strong{
           -webkit-appearance: none;
           background: url(image_path("down_arrow_select.jpg")) no-repeat right #eee;
         }
+        input{
+          @extend select;
+          background: #eee;
+          width: 26.25em;
+          border-radius: .35em;
+        }
+        .input-pair{
+          margin: 2em 0;
+          label{
+            margin-left: 1em;
+          }
+        }
       }
       .submit-button{
         margin: 4em 0px 3em 0px;
@@ -166,8 +178,21 @@ strong{
           -moz-border-radius: .5em;
         }
       }
+      .alt-signup{
+        display: none;
+      }
+      .alt-signup-link{
+        margin: 1em 0;
+        font-size: 1.25em; 
+        a{
+          color: #036;
+          &:hover{
+            color: blue;
+          }
+        }
+      }
       .fuds{
-        margin-top: 2em;
+        margin-top: 1em;
         line-height: 1.25em;
         font-size: 1em;
         color: #aaa;
