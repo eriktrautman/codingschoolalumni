@@ -38,6 +38,7 @@
     </div>
 
     <div class="alt-signup inputs">
+      <input type="hidden" name="is_alt_form" value="false" id="is-alt-form">
       <div class="input-pair">
         <%= f.label :fname, "3. First Name" %>
         <%= f.text_field :fname %>
@@ -86,7 +87,6 @@
 <script>
   $(function(){
 
-    var is_alt_form = false;
 
     // on selection made or change made to the school box
     // grab the cohort data and display it for that cohort only
@@ -119,6 +119,7 @@
     
   // validate the form to make sure it's filled out properly
   function validateForm(){
+    var is_alt_form = $("#is-alt-form").val() == "true";
     if($("#cohort-combobox").val() == ""){
       alert("\nPlease select your school and cohort! \n\nIf yours isn't here, email:\n erik@theodinproject.com\n");
       return false;
@@ -143,14 +144,14 @@
 
   // switch from the linkedin submission to the alternate form
   function showAltSignup(){
-    is_alt_form = true;
+    $("#is-alt-form").val("true");
     $(".alt-signup").slideDown();
     $(".main-signup").fadeOut();
   }
 
   // switch from the alt submission to the linkedin submission
   function showMainSignup(){
-    is_alt_form = false;
+    $("#is-alt-form").val("false");
     $(".alt-signup").slideUp();
     $(".main-signup").fadeIn();
   }

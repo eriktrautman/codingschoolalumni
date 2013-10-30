@@ -24,12 +24,15 @@ class UsersController < ApplicationController
   # redirects the user to the LinkedIn signup flow
   def validate_signup
     session[:cohort_id] = params[:cohort_id]
-    if params[:user][:fname] && params[:user][:lname] && params[:user][:email]
+    if params[:is_alt_form] == "true"
       session[:user_fname] = params[:user][:fname]
       session[:user_lname] = params[:user][:lname]
       session[:user_email] = params[:user][:email]
       redirect_to create_user_path
     else
+      session[:user_fname] = nil
+      session[:user_lname] = nil
+      session[:user_email] = nil
       redirect_to "/auth/linkedin"
     end
   end
