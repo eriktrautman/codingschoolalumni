@@ -82,6 +82,8 @@
 <script>
   $(function(){
 
+    var is_alt_form = false;
+
     // on selection made or change made to the school box
     // grab the cohort data and display it for that cohort only
     $("#school_school_id").change(function(){
@@ -117,17 +119,30 @@
       alert("Please select your school and cohort \nIf yours isn't here, please email erik@theodinproject.com");
       return false;
     }
+    // the previous code was enough to validate the main form, so 
+    // it's onto the alternate form now
+    if(is_alt_form){
+      no_fname = $("#user_fname").val() == "";
+      no_lname = $("#user_lname").val() == "";
+      no_email = $("#user_email").val() == "";
+      if( no_fname || no_lname || no_email){
+        alert("Please enter your name and email in the form fields");
+        return false;
+      }
+    }
     return true;
   }
 
   // switch from the linkedin submission to the alternate form
   function showAltSignup(){
+    is_alt_form = true;
     $(".alt-signup").slideDown();
     $(".main-signup").fadeOut();
   }
 
   // switch from the alt submission to the linkedin submission
   function showMainSignup(){
+    is_alt_form = false;
     $(".alt-signup").slideUp();
     $(".main-signup").fadeIn();
   }

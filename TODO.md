@@ -10,6 +10,7 @@ Future:
 * Note: linkedin tokens expire in 90 days!!!
 DELAY Set up domain emailing with Google Apps
 
+DONE Add validations to signup form alternate
 DONE Add alternate signup flow views
 DONE Change "Cohort" to "Class" on home page
 DONE Add more future cohorts
