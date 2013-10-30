@@ -1,5 +1,4 @@
 TODO
-* Controller for alternate signup flow
 
 Future:
 * Alter thank you page to remove "kickoff" and go to "next" event
@@ -10,6 +9,8 @@ Future:
 * Note: linkedin tokens expire in 90 days!!!
 DELAY Set up domain emailing with Google Apps
 
+DONE Email input validation on client and server side
+DONE Controller for alternate signup flow
 DONE Add validations to signup form alternate
 DONE Add alternate signup flow views
 DONE Change "Cohort" to "Class" on home page

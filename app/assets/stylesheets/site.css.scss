@@ -3,8 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 html{
+  background: url(image_path("bg.jpg")) center center; 
   background-size: cover;
-  background-image: url(image_path("bg.jpg")); 
   font-size: 75%;
   padding: 0;
 }

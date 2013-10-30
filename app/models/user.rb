@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   [:cohort_id, :fname, :lname].each do |col|
     validates col, :presence => true
   end
+  validates_format_of :email, :with => /@/
 
   # Subscribes a new user to the mailchimp list
   def subscribe

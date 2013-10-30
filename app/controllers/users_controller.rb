@@ -24,19 +24,34 @@ class UsersController < ApplicationController
   # redirects the user to the LinkedIn signup flow
   def validate_signup
     session[:cohort_id] = params[:cohort_id]
-    redirect_to "/auth/linkedin"
+    if params[:user][:fname] && params[:user][:lname] && params[:user][:email]
+      session[:user_fname] = params[:user][:fname]
+      session[:user_lname] = params[:user][:lname]
+      session[:user_email] = params[:user][:email]
+      redirect_to create_user_path
+    else
+      redirect_to "/auth/linkedin"
+    end
   end
 
   def create
     if session[:cohort_id]
       cohort = Cohort.find_by_id(session[:cohort_id])
       if cohort
-        @user = User.new( 
-            :email => auth_hash[:info][:email], 
-            :fname => auth_hash[:info][:first_name],
-            :lname => auth_hash[:info][:last_name],
-            :linkedin_token => auth_hash[:credentials][:token],
-            :cohort_id => cohort.id)
+        if params[:linkedin]
+          @user = User.new( 
+              :email => auth_hash[:info][:email], 
+              :fname => auth_hash[:info][:first_name],
+              :lname => auth_hash[:info][:last_name],
+              :linkedin_token => auth_hash[:credentials][:token],
+              :cohort_id => cohort.id)
+        else
+          @user = User.new(
+              :email => session[:user_email], 
+              :fname => session[:user_fname],
+              :lname => session[:user_lname],
+              :cohort_id => cohort.id)
+        end
         if @user.save
           redirect_to root_path(:thanks => true)
         else
@@ -44,7 +59,7 @@ class UsersController < ApplicationController
           redirect_to root_path
         end
       else
-        flash[:error] = "Error! We got your LinkedIn credentials but the cohort that you selected wasn't valid.  Could be our fault..."
+        flash[:error] = "Error! The cohort that you selected wasn't valid.  Could be our fault..."
         redirect_to root_path
       end
     else

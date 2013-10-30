@@ -50,6 +50,10 @@
         <%= f.label :email, "5. Email" %>
         <%= f.text_field :email %>
       </div>
+      <div class="input-pair">
+        <%= f.label :email_confirmation, "5b. Confirm Email" %>
+        <input type="text" name="user[email_confirmation]" id="email-conf">
+      </div>
 
       <div class="submit-button alt-signup">
         <%= f.submit :value => "6. Sign up (free)" %>
@@ -116,7 +120,7 @@
   // validate the form to make sure it's filled out properly
   function validateForm(){
     if($("#cohort-combobox").val() == ""){
-      alert("Please select your school and cohort \nIf yours isn't here, please email erik@theodinproject.com");
+      alert("\nPlease select your school and cohort! \n\nIf yours isn't here, email:\n erik@theodinproject.com\n");
       return false;
     }
     // the previous code was enough to validate the main form, so 
@@ -127,6 +131,10 @@
       no_email = $("#user_email").val() == "";
       if( no_fname || no_lname || no_email){
         alert("Please enter your name and email in the form fields");
+        return false;
+      }
+      if( $("#email-conf").val() !== $("#user_email").val()){
+        alert("Your email doesn't match the confirmation...")
         return false;
       }
     }
