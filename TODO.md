@@ -9,6 +9,7 @@ Future:
 * Note: linkedin tokens expire in 90 days!!!
 DELAY Set up domain emailing with Google Apps
 
+DONE update welcome email with first event links / language
 DONE fix bug where first filling out alt form then trying linkedin triggers alt controller stuff
 DONE Email input validation on client and server side
 DONE Controller for alternate signup flow
