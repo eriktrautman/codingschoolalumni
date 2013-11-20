@@ -8,5 +8,6 @@ Codingschoolalumni::Application.routes.draw do
   get "/create_user" => "users#create", :linkedin => false
   get "/thanks" => redirect("/thanks.html")
   get "anti_harassment_policy" => "static_pages#anti_harassment_policy"
+  get "privacy_policy" => "static_pages#privacy_policy"
 
 end

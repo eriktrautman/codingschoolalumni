@@ -12,11 +12,8 @@
 
   <div id="main-content">
 
-    <% if @thanks %>
-      <%= render :partial => "thanks.html" %>
-    <% else %>
-      <%= render :partial => "splash.html", :locals => {:cohorts_list => @cohorts_list, :schools_list => @schools_list, :user => @user} %>
-    <% end %>
+
+    <%= render :partial => "privacy" %>
 
     <hr>
 

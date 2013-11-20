@@ -297,7 +297,7 @@ strong{
   }
 }
 
-.anti-harassment-body{
+.policy-body{
   padding: 0 1.5em 2em;
   text-align: left;
   color: #444;
@@ -305,5 +305,13 @@ strong{
     font-size: 1.5em;
     line-height: 1.25em;
     margin: 1em 0;
+  }
+}
+.policy-links{
+  font-size: .25rem;
+  margin-top: .25rem;
+  a{
+    font-size: .85rem;
+    text-decoration: none;
   }
 }
