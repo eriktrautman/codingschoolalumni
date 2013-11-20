@@ -7,5 +7,6 @@ Codingschoolalumni::Application.routes.draw do
   get "/auth/linkedin/callback" => "users#create", :linkedin => true
   get "/create_user" => "users#create", :linkedin => false
   get "/thanks" => redirect("/thanks.html")
+  get "anti_harassment_policy" => "static_pages#anti_harassment_policy"
 
 end
