@@ -42,6 +42,8 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+gem 'therubyracer', :require => 'v8'
+
 group :production do
   # Prepare the app for deployment to Heroku
   gem 'rails_12factor'
@@ -65,7 +67,7 @@ group :development, :test do
 end
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use unicorn as the app server
 # gem 'unicorn'
