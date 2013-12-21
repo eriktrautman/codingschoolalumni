@@ -1,17 +1,20 @@
+require 'bcrypt'
+
 class User < ActiveRecord::Base
-
-  after_save :subscribe
-  after_create :send_welcome
-  before_destroy :unsubscribe
-
-  belongs_to :cohort
-  has_one :school, :through => :cohort
 
   validates :email, :presence => true, :uniqueness => true
   [:cohort_id, :fname, :lname].each do |col|
     validates col, :presence => true
   end
   validates_format_of :email, :with => /@/
+
+  after_save :subscribe
+  after_create :send_welcome
+  before_destroy :unsubscribe
+  after_initialize :ensure_session_token
+
+  belongs_to :cohort
+  has_one :school, :through => :cohort
 
   # Subscribes a new user to the mailchimp list
   def subscribe
@@ -67,6 +70,20 @@ class User < ActiveRecord::Base
 
   def password=(password)
     self.password_digest = BCrypt::Password.create(password)
+  end
+
+  def self.generate_session_token
+    SecureRandom::urlsafe_base64(16)
+  end
+
+  def reset_session_token!
+    self.session_token = User.generate_session_token
+    self.save!
+  end
+
+  private
+  def ensure_session_token
+    self.session_token ||= User.generate_session_token
   end
 
 end

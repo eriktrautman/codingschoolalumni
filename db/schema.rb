@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 20131220065109) do
     t.string   "lname"
     t.string   "linkedin_token"
     t.string   "password_digest"
+    t.string   "session_token"
   end
 
   add_index "users", ["cohort_id"], name: "index_users_on_cohort_id"
