@@ -2,6 +2,8 @@ require 'bcrypt'
 
 class User < ActiveRecord::Base
 
+  attr_accessible :session_token
+
   validates :email, :presence => true, :uniqueness => true
   [:cohort_id, :fname, :lname].each do |col|
     validates col, :presence => true
@@ -11,7 +13,7 @@ class User < ActiveRecord::Base
   after_save :subscribe
   after_create :send_welcome
   before_destroy :unsubscribe
-  after_initialize :ensure_session_token
+  #after_initialize :ensure_session_token
 
   belongs_to :cohort
   has_one :school, :through => :cohort

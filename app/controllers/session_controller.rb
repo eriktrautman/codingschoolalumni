@@ -9,7 +9,7 @@ class SessionController < ApplicationController
     if !!user
       user.reset_session_token!
       session[:token] = user.session_token
-      # todo: redirect to a main application page
+      redirect_to users_url(user)
     else
       flash[:error] = "user does not exist"
       redirect_to new_session_url

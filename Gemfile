@@ -20,6 +20,8 @@ gem 'omniauth-linkedin-oauth2', '~> 0.1.1'
 # Use Figaro to manage secret keys and env variables
 gem 'figaro'
 
+gem 'protected_attributes'
+
 # Use Gibbon to connect user signups to MailChimp
 # Must use the github version to use 0.0.5
 gem 'gibbon', git: 'git://github.com/amro/gibbon.git'

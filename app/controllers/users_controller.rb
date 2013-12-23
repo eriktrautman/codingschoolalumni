@@ -9,13 +9,13 @@ class UsersController < ApplicationController
         .where("cohorts.end_date < ?", cohort_show_cutoff)
         .order(:city_id => :asc, :end_date => :asc)
         .map do |c|
-      {
-        :id => c.id, 
-        :city => c.city.abbrev,
-        :end_date => c.end_date,
-        :start_date => c.start_date,
-        :school_id => c.school_id,
-      }
+        {
+          :id => c.id, 
+          :city => c.city.abbrev,
+          :end_date => c.end_date,
+          :start_date => c.start_date,
+          :school_id => c.school_id
+        }
     end
   end
 
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
       redirect_to create_user_path
     else
       session[:user_fname] = nil
-      session[:user_lname] = ni
+      session[:user_lname] = nil
       session[:user_email] = nil
       redirect_to "/auth/linkedin"
     end
@@ -47,15 +47,17 @@ class UsersController < ApplicationController
               :fname => auth_hash[:info][:first_name],
               :lname => auth_hash[:info][:last_name],
               :linkedin_token => auth_hash[:credentials][:token],
-              :cohort_id => cohort.id,
-              :password => params[:user_password])
+              :cohort_id => cohort.id
+              #:password => params[:user_password]
+              )
         else
           @user = User.new(
               :email => session[:user_email], 
               :fname => session[:user_fname],
               :lname => session[:user_lname],
               :cohort_id => cohort.id
-              :password => params[:user_password])
+              #:password => params[:user_password]
+              )
         end
         if @user.save
           redirect_to root_path(:thanks => true)
