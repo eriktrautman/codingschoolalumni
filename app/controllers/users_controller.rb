@@ -47,16 +47,16 @@ class UsersController < ApplicationController
               :fname => auth_hash[:info][:first_name],
               :lname => auth_hash[:info][:last_name],
               :linkedin_token => auth_hash[:credentials][:token],
-              :cohort_id => cohort.id
-              #:password => params[:user_password]
+              :cohort_id => cohort.id,
+              :password => params[:user][:password]
               )
         else
           @user = User.new(
               :email => session[:user_email], 
               :fname => session[:user_fname],
               :lname => session[:user_lname],
-              :cohort_id => cohort.id
-              #:password => params[:user_password]
+              :cohort_id => cohort.id,
+              :password => params[:user][:password]
               )
         end
         if @user.save
@@ -77,7 +77,7 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
-    render: show
+    render :show
   end
 
 

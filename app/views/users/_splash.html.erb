@@ -20,6 +20,11 @@
 <div class="signup-form">
   <%= form_for user, :url => "validate_user",
         :html => { :onsubmit => "return(validateForm())"} do |f| %>
+
+    <div id="set-password" class="inputs">
+      <label for="user_password">Set Up Your Password</label>
+      <input type="password" name="user[password]" id="user_password">
+    </div>
     
     <div id="school-inputs" class="inputs">
       <label>
