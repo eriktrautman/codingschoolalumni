@@ -13,10 +13,10 @@ class User < ActiveRecord::Base
   after_save :subscribe
   after_create :send_welcome
   before_destroy :unsubscribe
-  #after_initialize :ensure_session_token
 
   belongs_to :cohort
   has_one :school, :through => :cohort
+  has_many :jobs
 
   # Subscribes a new user to the mailchimp list
   def subscribe
@@ -81,11 +81,6 @@ class User < ActiveRecord::Base
   def reset_session_token!
     self.session_token = User.generate_session_token
     self.save!
-  end
-
-  private
-  def ensure_session_token
-    self.session_token ||= User.generate_session_token
   end
 
 end

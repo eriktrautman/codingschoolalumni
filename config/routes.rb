@@ -2,7 +2,7 @@ Codingschoolalumni::Application.routes.draw do
 
   root "users#new"
 
-  resource :session, :only => [:create, :destroy]
+  resource :session, :only => [:new, :create, :destroy]
   resources :users, :only => [:new, :show]
   post "validate_user" => "users#validate_signup"
   get "/auth/linkedin/callback" => "users#create", :linkedin => true
