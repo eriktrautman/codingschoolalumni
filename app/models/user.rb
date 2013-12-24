@@ -1,16 +1,13 @@
 require 'bcrypt'
 
 class User < ActiveRecord::Base
-
-  attr_accessible :session_token
-
   validates :email, :presence => true, :uniqueness => true
   [:cohort_id, :fname, :lname].each do |col|
     validates col, :presence => true
   end
   validates_format_of :email, :with => /@/
 
-  after_save :subscribe
+  # after_save :subscribe
   after_create :send_welcome
   before_destroy :unsubscribe
 
@@ -39,7 +36,6 @@ class User < ActiveRecord::Base
       :send_welcome => false
       })
     Rails.logger.info("Subscribed #{self.email} to MailChimp") if result
-
   end
 
   # Unsubscribe user from the MailChimp mailing list
@@ -60,7 +56,7 @@ class User < ActiveRecord::Base
     UserMailer.welcome_email(self).deliver!
   end
 
-  def find_by_credentials(email, password)
+  def self.find_by_credentials(email, password)
     user = User.find_by_email(email)
     return nil if user.nil?
     user.is_password?(password) ? user : nil
