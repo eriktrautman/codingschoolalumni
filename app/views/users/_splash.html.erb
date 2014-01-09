@@ -20,11 +20,6 @@
 <div class="signup-form">
   <%= form_for user, :url => "validate_user",
         :html => { :onsubmit => "return(validateForm())"} do |f| %>
-
-    <div id="set-password" class="inputs">
-      <label for="user_password">Set Up Your Password</label>
-      <input type="password" name="user[password]" id="user_password">
-    </div>
     
     <div id="school-inputs" class="inputs">
       <label>
@@ -42,27 +37,33 @@
       </select>
     </div>
 
+
+    <div id="set-password" class="inputs">
+      <label for="user_password">3. Set Up Your Password</label>
+      <input type="password" name="user[password]" id="user_password">
+    </div>
+
     <div class="alt-signup inputs">
       <input type="hidden" name="is_alt_form" value="false" id="is-alt-form">
       <div class="input-pair">
-        <%= f.label :fname, "3. First Name" %>
+        <%= f.label :fname, "4. First Name" %>
         <%= f.text_field :fname %>
       </div>
       <div class="input-pair">
-        <%= f.label :lname, "4. Last Name" %>
+        <%= f.label :lname, "5. Last Name" %>
         <%= f.text_field :lname %>
       </div>
       <div class="input-pair">
-        <%= f.label :email, "5. Email" %>
+        <%= f.label :email, "6. Email" %>
         <%= f.text_field :email %>
       </div>
       <div class="input-pair">
-        <%= f.label :email_confirmation, "5b. Confirm Email" %>
+        <%= f.label :email_confirmation, "6b. Confirm Email" %>
         <input type="text" name="user[email_confirmation]" id="email-conf">
       </div>
 
       <div class="submit-button alt-signup">
-        <%= f.submit :value => "6. Sign up (free)" %>
+        <%= f.submit :value => "7. Sign up (free)" %>
         <div class="alt-signup-link">
           <a href="javascript:void(0)" onClick="showMainSignup()">Umm, I forgot, I actually do have a LinkedIn profile...</a><br>
         </div>
@@ -73,7 +74,7 @@
     </div>
 
     <div class="submit-button main-signup">
-      <%= f.submit :value => "3. Sign up (free) with LinkedIn" %>
+      <%= f.submit :value => "4. Sign up (free) with LinkedIn" %>
         
       <div class="alt-signup-link">
         <a href="javascript:void(0)" onClick="showAltSignup()">I don't have a LinkedIn profile!</a><br>
