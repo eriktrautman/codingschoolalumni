@@ -80,24 +80,51 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = current_user
-    render :show
+    if !!current_user && (params[:id].to_i == current_user.id)
+      @user = current_user
+      render :show
+    else
+      redirect_to root_url
+    end
   end
 
-  def pw_reset
+  def request_pw_reset
+    render :pw_reset_request
+  end
+
+  def send_pw_reset_email
+    user = User.find_by_email(params[:user][:email])
+
+    if !user
+      flash[:error] = "User does not exist"
+      redirect_to request_pw_reset_url
+    else
+      UserMailer.pw_reset_email(user).deliver!
+      redirect_to root_url
+    end
+  end
+
+  def edit_pw
     @user = User.find_by_id(params[:id])
-    render :pw_reset
+    render :edit_pw
   end
 
-  def edit
+  def update_pw
     @user = User.find_by_session_token(params[:validation_token])
 
-    if @user.save
-      @user.reset_session_token!
-      redirect_to user_url(@user)
+    if !!@user
+      @user.password = BCrypt::Password.create(params[:user][:password])
+      if @user.save
+        @user.reset_session_token!
+        redirect_to user_url(@user)
+      else
+        flash[:error] = "Password reset unsuccessful"
+        redirect_to "/user/#{@user.id}/pw_reset"
+      end
     else
-      flash[:error] = "Password reset unsuccessful"
-      redirect_to "/user/#{@user.id}/pw_reset"
+      flash[:error] = "invalid password reset key"
+      redirect_to root_url
+    end
   end
 
 

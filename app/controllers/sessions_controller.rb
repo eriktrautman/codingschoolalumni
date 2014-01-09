@@ -1,3 +1,5 @@
+require 'bcrypt'
+
 class SessionsController < ApplicationController
   def new
     render :new
