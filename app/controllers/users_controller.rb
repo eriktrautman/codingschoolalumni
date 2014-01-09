@@ -84,6 +84,22 @@ class UsersController < ApplicationController
     render :show
   end
 
+  def pw_reset
+    @user = User.find_by_id(params[:id])
+    render :pw_reset
+  end
+
+  def edit
+    @user = User.find_by_session_token(params[:validation_token])
+
+    if @user.save
+      @user.reset_session_token!
+      redirect_to user_url(@user)
+    else
+      flash[:error] = "Password reset unsuccessful"
+      redirect_to "/user/#{@user.id}/pw_reset"
+  end
+
 
   private
 
