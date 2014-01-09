@@ -1,3 +1,6 @@
+require 'bcrypt'
+
+
 class UsersController < ApplicationController
 
   def new
@@ -24,7 +27,7 @@ class UsersController < ApplicationController
   # redirects the user to the LinkedIn signup flow
   def validate_signup
     session[:cohort_id] = params[:cohort_id]
-    session[:password] = params[:user][:password]
+    session[:digested_password] = BCrypt::Password.create(params[:user][:password])
     if params[:is_alt_form] == "true"
       session[:user_fname] = params[:user][:fname]
       session[:user_lname] = params[:user][:lname]
@@ -49,7 +52,7 @@ class UsersController < ApplicationController
               :lname => auth_hash[:info][:last_name],
               :linkedin_token => auth_hash[:credentials][:token],
               :cohort_id => cohort.id,
-              :password => session[:password]
+              :password => session[:digested_password]
               )
         else
           @user = User.new(
@@ -57,7 +60,7 @@ class UsersController < ApplicationController
               :fname => session[:user_fname],
               :lname => session[:user_lname],
               :cohort_id => cohort.id,
-              :password => session[:password]
+              :password => session[:digested_password]
               )
         end
         if @user.save

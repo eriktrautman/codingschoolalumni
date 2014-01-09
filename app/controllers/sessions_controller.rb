@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       session[:token] = user.session_token
       redirect_to user_url(user)
     else
-      flash[:error] = "user does not exist"
+      flash[:error] = "Record does not match"
       redirect_to new_session_url
     end
   end
