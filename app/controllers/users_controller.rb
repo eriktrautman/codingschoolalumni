@@ -52,7 +52,6 @@ class UsersController < ApplicationController
               :lname => auth_hash[:info][:last_name],
               :linkedin_token => auth_hash[:credentials][:token],
               :cohort_id => cohort.id,
-              :password => session[:digested_password]
               )
         else
           @user = User.new(
