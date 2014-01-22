@@ -56,8 +56,20 @@
         <input type="text" name="user[email_confirmation]" id="email-conf">
       </div>
 
+      <div id="set-password" class="inputs">
+        <label for="user_password">6. Set Up Your Password</label>
+        <input type="password" name="user[password]" id="user_password">
+      </div>
+
+      <div id="set-password" class="inputs">
+        <label for="user_password">6b. Confirm Password</label>
+        <input type="password" name="user[password]" id="user_password">
+      </div>
+
+
+
       <div class="submit-button alt-signup">
-        <%= f.submit :value => "6. Sign up (free)" %>
+        <%= f.submit :value => "7. Sign up (free)" %>
         <div class="alt-signup-link">
           <a href="javascript:void(0)" onClick="showMainSignup()">Umm, I forgot, I actually do have a LinkedIn profile...</a><br>
         </div>

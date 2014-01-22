@@ -1,0 +1,9 @@
+<h2>
+<%= @user.fname + " " + @user.lname %>
+</h2>
+
+<% @user.jobs.each do |single_job| %>
+
+  <ul><%= single_job.company_name %></ul>
+
+<% end %>

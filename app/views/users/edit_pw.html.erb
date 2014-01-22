@@ -1,0 +1,8 @@
+<form action="<%=edit_user_url%>" method="post">
+<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+<input type="hidden" name="validation_token" value="<%= params[:key] %>">
+  <label for="user_password"  class="account">New Password</label>
+  <input type="password" name="user[password]" id="user_password">
+  <br>
+  <input type="submit" value="Reset Password">        
+</form>

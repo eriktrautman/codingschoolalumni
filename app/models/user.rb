@@ -1,17 +1,19 @@
+require 'bcrypt'
+
 class User < ActiveRecord::Base
-
-  after_save :subscribe
-  after_create :send_welcome
-  before_destroy :unsubscribe
-
-  belongs_to :cohort
-  has_one :school, :through => :cohort
-
   validates :email, :presence => true, :uniqueness => true
   [:cohort_id, :fname, :lname].each do |col|
     validates col, :presence => true
   end
   validates_format_of :email, :with => /@/
+
+  # after_save :subscribe
+  after_create :send_welcome
+  before_destroy :unsubscribe
+
+  belongs_to :cohort
+  has_one :school, :through => :cohort
+  has_many :jobs
 
   # Subscribes a new user to the mailchimp list
   def subscribe
@@ -34,7 +36,6 @@ class User < ActiveRecord::Base
       :send_welcome => false
       })
     Rails.logger.info("Subscribed #{self.email} to MailChimp") if result
-
   end
 
   # Unsubscribe user from the MailChimp mailing list
@@ -53,6 +54,29 @@ class User < ActiveRecord::Base
   # Use the internal mailer to send a welcome email
   def send_welcome
     UserMailer.welcome_email(self).deliver!
+  end
+
+  def self.find_by_credentials(email, password)
+    user = User.find_by_email(email)
+    return nil if user.nil?
+    user.is_password?(password) ? user : nil
+  end
+
+  def is_password?(password)
+    BCrypt::Password.new(self.password_digest).is_password?(password)
+  end
+
+  def password=(digested_password)
+    self.password_digest = digested_password
+  end
+
+  def self.generate_session_token
+    SecureRandom::urlsafe_base64(16)
+  end
+
+  def reset_session_token!
+    self.session_token = User.generate_session_token
+    self.save!
   end
 
 end
