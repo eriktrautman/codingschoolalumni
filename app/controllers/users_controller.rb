@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   def new
     @user = User.new
     @schools_list = School.all
-    cohort_show_cutoff = Date.today + 6.weeks
+    cohort_show_cutoff = Date.today + 15.weeks
     @thanks = params[:thanks]
     @cohorts_list = Cohort.includes(:city)
         .where("cohorts.end_date < ?", cohort_show_cutoff)
