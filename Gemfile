@@ -15,7 +15,9 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # Use OmniAuth to set up the LinkedIn authentication
 gem 'omniauth', '~> 1.1.4'
-gem 'omniauth-linkedin-oauth2', '~> 0.1.1'
+
+# 0.1.4 and 0.1.5 both have intermittent issues with auth failures.
+gem 'omniauth-linkedin-oauth2', '0.1.3'
 
 # Use Figaro to manage secret keys and env variables
 gem 'figaro'
