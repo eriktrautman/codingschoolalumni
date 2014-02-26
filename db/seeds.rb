@@ -18,6 +18,7 @@ City.create(:name=>"Berlin", :abbrev=>"BERL")
 City.create(:name=>"Hong Kong", :abbrev=>"HK")
 City.create(:name=>"Sydney", :abbrev=>"SYD")
 City.create(:name=>"Washington DC", :abbrev=>"DC")
+City.create(:name=>"Austin", :abbrev=> "AUS")
 
 # Schools (unique constraint on name)
 School.create(:name=>"App Academy")
@@ -25,6 +26,7 @@ School.create(:name=>"Dev Bootcamp")
 School.create(:name=>"Hack Reactor")
 School.create(:name=>"Hackbright Academy")
 School.create(:name=>"General Assembly")
+School.create(:name=>"MakerSquare")
 
 # ************************ APP ACADEMY *****************************
 school_id = School.find_by_name("App Academy").id
@@ -314,6 +316,23 @@ city_id = City.find_by_name("Sydney").id
   "2014-02-24" => "2014-05-21",
 }.map {|s,e| Cohort.create(:start_date => (Date.parse(s)+12.hours), :end_date => (Date.parse(e)+12.hours), :school_id => school_id, :city_id => city_id)}
 
+#********************* MAKERSQUARE **********************
+school_id = School.find_by_name("MakerSquare").id
+
+# Austin MakerSquare
+city_id = City.find_by_name("Austin").id
+ {
+  "2013-06-10" => "2013-08-30",
+  "2013-09-03" => "2013-11-22",
+  "2013-11-11" => "2014-01-31",
+  "2014-02-04" => "2014-04-25",
+  "2014-03-03" => "2014-05-23",
+  "2014-03-31" => "2014-06-20",
+  "2014-04-21" => "2014-07-11",
+  "2014-05-12" => "2014-08-01",
+  "2014-06-02" => "2014-08-22",
+  "2014-06-23" => "2014-09-12",
+}.map {|s,e| Cohort.create(:start_date => (Date.parse(s)+12.hours), :end_date => (Date.parse(e)+12.hours), :school_id => school_id, :city_id => city_id)}
 
 
 
